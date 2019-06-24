@@ -1,0 +1,29 @@
+<h1>Tip Calulator</h1>
+<form >
+  Check Total:<br>
+  <input type="number" id="total" v
+         onchange="calculateTotal()">
+  <br>
+  Tip:<br>
+  <input type="number" id="tip" value=0
+         onchange="calculateTotal()">
+  <br><br>
+  Bill Total:<br>
+  <input type="number" id="bill" value=0
+         onchange="calculateTotal()">
+</form>
+
+<script>
+  function getTotal(){
+    return parseInt(document.getElementById('total').value)
+  }
+
+  function getTip(){
+    return parseInt(document.getElementById('tip').value)
+  }
+
+  function calculateTotal() {
+    bill = getTotal() + ((getTotal() * getTip())/100);
+    document.getElementById('bill').value = bill;
+  }
+</script>
