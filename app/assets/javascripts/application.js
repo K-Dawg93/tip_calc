@@ -19,6 +19,6 @@
 $(document).ready(function() {
 
   $('.calculator').css({
-    top: "120px"
+    top: "160px"
   });
 })
