@@ -20,16 +20,30 @@
 
 <script>
   function getTotal(){
-    return parseInt(document.getElementById('total').value)
+    total = parseFloat(document.getElementById('total').value)
+    if (total <= 0){
+      alert('Please enter a positive number')
+      document.getElementById('total').value = null
+    }
+    else {
+      return total
+    }
   }
 
   function getTip(){
-    return parseInt(document.getElementById('tip').value)
+    tip = parseFloat(document.getElementById('tip').value)
+    if (tip <= 0){
+      alert('Please enter a positive number')
+      document.getElementById('tip').value = null
+    }
+    else {
+      return tip
+    }
   }
 
   function calculateTotal() {
     tip = ((getTotal() * getTip())/100);
-    bill = getTotal() + tip;
+    bill = (getTotal() + tip).toFixed(2);
 
     if (getTip() != null){
       document.getElementById('bill').value = bill;
