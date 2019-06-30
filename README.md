@@ -5,20 +5,6 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version = 2.4.1
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Type in a bill total and a tip percentage to get the final total and what the tip will be!
