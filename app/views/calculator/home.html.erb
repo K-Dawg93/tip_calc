@@ -1,17 +1,22 @@
+<div class = 'calculator'>
 <h1>Tip Calulator</h1>
 <form >
   Check Total:<br>
-  <input type="number" id="total" v
+  <input type="number" id="total" placeholder="Enter Bill Total..."
          onchange="calculateTotal()">
   <br>
-  Tip:<br>
-  <input type="number" id="tip" value=0
+  Tip Percentage:<br>
+  <input type="number" id="tip" placeholder="Enter Tip..."
          onchange="calculateTotal()">
-  <br><br>
+  <br>
+  <br>
+
   Bill Total:<br>
-  <input type="number" id="bill" value=0
+  <input type="number" id="bill" placeholder="0"
          onchange="calculateTotal()">
 </form>
+  <p id='opinion'></p>
+</div>
 
 <script>
   function getTotal(){
@@ -23,7 +28,26 @@
   }
 
   function calculateTotal() {
-    bill = getTotal() + ((getTotal() * getTip())/100);
+    tip = ((getTotal() * getTip())/100);
+    bill = getTotal() + tip;
+
+
     document.getElementById('bill').value = bill;
+    giveOpinion()
+    console.log(total);
   }
+
+  function giveOpinion() {
+    tip = (getTotal()* (getTip()/100)).toFixed(2);
+    if (getTip() < 15) {
+      document.getElementById('opinion').innerHTML = 'A $'+tip + " tip? That's a little low...";
+    }
+    else if (getTip() >=15 && getTip() <=20) {
+      document.getElementById('opinion').innerHTML = "That's a $"+tip+" tip!";
+    }
+    else if (getTip() > 20) {
+      document.getElementById('opinion').innerHTML = "A $"+tip+" tip? Wow, big spender!";
+    }
+  }
+
 </script>
