@@ -4,7 +4,7 @@
 //= require action_cable
 //= require_self
 //= require_tree ./channels
-
+//slides the calculator up from the bottom
 (function() {
   this.App || (this.App = {});
 

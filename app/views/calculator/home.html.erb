@@ -19,6 +19,7 @@
 </div>
 
 <script>
+  //Gets the value of the bill
   function getTotal(){
     total = parseFloat(document.getElementById('total').value)
     if (total <= 0){
@@ -29,7 +30,7 @@
       return total
     }
   }
-
+  //Gets the value of the tip
   function getTip(){
     tip = parseFloat(document.getElementById('tip').value)
     if (tip <= 0){
@@ -40,7 +41,7 @@
       return tip
     }
   }
-
+  //Gets the new total value
   function calculateTotal() {
     tip = ((getTotal() * getTip())/100);
     bill = (getTotal() + tip).toFixed(2);
@@ -51,9 +52,9 @@
     giveOpinion()
     console.log(total);
   }
-
+  //Gives an opinion on your tip
   function giveOpinion() {
-    tip1 = (getTotal()* (getTip()/100));
+    tip1 = (getTotal()* (getTip()/100)).toFixed(2);
     if (getTip() < 15) {
       document.getElementById('opinion').innerHTML = 'A $'+tip1 + " tip? That's a little low...";
     }
