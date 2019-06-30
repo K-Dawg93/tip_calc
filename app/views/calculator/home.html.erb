@@ -2,11 +2,11 @@
 <h1>Tip Calulator</h1>
 <form >
   Check Total:<br>
-  <input type="number" id="total" placeholder="Enter Bill Total..."
+  <input type="tel" id="total" placeholder="Enter Bill Total..."
          onchange="calculateTotal()">
   <br>
   Tip Percentage:<br>
-  <input type="number" id="tip" placeholder="Enter Tip..."
+  <input type="tel" id="tip" placeholder="Enter Tip..."
          onchange="calculateTotal()">
   <br>
   <br>
@@ -31,8 +31,9 @@
     tip = ((getTotal() * getTip())/100);
     bill = getTotal() + tip;
 
-
-    document.getElementById('bill').value = bill;
+    if (getTip() != null){
+      document.getElementById('bill').value = bill;
+    }
     giveOpinion()
     console.log(total);
   }
@@ -43,7 +44,7 @@
       document.getElementById('opinion').innerHTML = 'A $'+tip + " tip? That's a little low...";
     }
     else if (getTip() >=15 && getTip() <=20) {
-      document.getElementById('opinion').innerHTML = "That's a $"+tip+" tip!";
+      document.getElementById('opinion').innerHTML = "That's an $"+tip+" tip!";
     }
     else if (getTip() > 20) {
       document.getElementById('opinion').innerHTML = "A $"+tip+" tip? Wow, big spender!";
