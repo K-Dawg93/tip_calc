@@ -53,15 +53,15 @@
   }
 
   function giveOpinion() {
-    tip = (getTotal()* (getTip()/100)).toFixed(2);
+    tip1 = (getTotal()* (getTip()/100));
     if (getTip() < 15) {
-      document.getElementById('opinion').innerHTML = 'A $'+tip + " tip? That's a little low...";
+      document.getElementById('opinion').innerHTML = 'A $'+tip1 + " tip? That's a little low...";
     }
     else if (getTip() >=15 && getTip() <=20) {
-      document.getElementById('opinion').innerHTML = "That's an $"+tip+" tip!";
+      document.getElementById('opinion').innerHTML = "That's an $"+tip1+" tip!";
     }
     else if (getTip() > 20) {
-      document.getElementById('opinion').innerHTML = "A $"+tip+" tip? Wow, big spender!";
+      document.getElementById('opinion').innerHTML = "A $"+tip1+" tip? Wow, big spender!";
     }
   }
 
